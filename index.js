@@ -3,15 +3,16 @@ const cors = require("cors");
 require('./db/config');
 const User =require("./db/User");
 const Product= require('./db/Product');
-const mongoose= require('mongoose');
-const Jwt = require("jsonwebtoken");
+ const Jwt = require("jsonwebtoken");
 const jwtKey='e-comm';
+
+const PORT= process.env.PORT || 5000;
 
 const app=express();
 
 app.use(express.json());
 app.use(cors());
-// const MONGO_URI="mongodb+srv://amitrajjnv2013:2002@AmanKumar@atlascluster.0jupqqk.mongodb.net/e-comm?retryWrites=true&w=majority"
+ 
 
 // app.post("/register", (req,res)=>{
 
@@ -129,4 +130,4 @@ app.delete("/product/:id", async (req, resp) => {
     resp.send(result)
 });
 
-app.listen(5000);
+app.listen(PORT);

@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
+const dotenv= require("dotenv");
+dotenv.config();
+
+ 
 
 const MONGO_URI =
   "mongodb+srv://amitrajjnv2013:2002@AmanKumar@atlascluster.0jupqqk.mongodb.net/e-comm?retryWrites=true&w=majority";
-//mongoose.connect(MONGO_URI);
+ 
 mongoose
-  .connect(MONGO_URI, {
+  .connect( MONGO_URI , {
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
